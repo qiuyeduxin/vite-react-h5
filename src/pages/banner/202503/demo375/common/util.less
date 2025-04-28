@@ -1,0 +1,14 @@
+@import '@/styles/utils.less';
+
+@baseUrl: '@/resources/banner/202503/dance-talent/';
+
+.background(
+  @img,
+  @height: 100%,
+  @color: transparent,
+  @repeat: no-repeat
+) {
+  background: url('@{baseUrl}@{img}') @repeat;
+  background-size: 100% @height;
+  background-color: @color;
+}

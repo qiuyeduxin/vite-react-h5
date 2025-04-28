@@ -1,0 +1,31 @@
+@import '../../common/util.less';
+
+.main {
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  top: 10px;
+  width: 100%;
+  height: 32px;
+}
+
+.close {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+
+  .background('go-back.png');
+}
+
+.logo {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 93px;
+  height: 24px;
+  .background('logo.png');
+}

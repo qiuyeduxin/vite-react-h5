@@ -1,0 +1,61 @@
+@import 'src/styles/variable.less';
+
+@class-prefix: ~'boc-react-loading';
+
+.@{class-prefix} {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  // margin: auto;
+  // z-index: 1000;
+  // width: 60px;
+  // height: 60px;
+  margin: auto;
+  z-index: 3000;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+
+  .snake {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -15px 0 0 -15px;
+    // background: url('https://img.breadfarm.club/MTc0MTE2MTk4MTU1NSMxNDAjZ2lm.gif') no-repeat center center;
+    // background-size: cover;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 5px 5px 0px 0px;
+    // border-color: @var-theme-color transparent transparent @var-theme-color;
+    border-color: #E5C193 transparent transparent #E5C193;
+
+    -webkit-animation: mint-spinner-rotate 1s infinite linear;
+    animation: mint-spinner-rotate 0.6s infinite linear;
+  }
+
+}
+
+@-webkit-keyframes mint-spinner-rotate {
+  0% {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+  }
+  100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+  }
+}
+@keyframes mint-spinner-rotate {
+  0% {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+  }
+  100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+  }
+}

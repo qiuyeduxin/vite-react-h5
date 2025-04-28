@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" data-prerendered="false" base-rem="750">
+  <head>
+    <%- headFirst %>
+    <meta charset="utf-8" />
+    <meta name="referer" content="never" />
+    <link rel="shortcut icon" href="/favicon.png" />
+    <meta name="keywords" content="<%= keywords %>" />
+    <meta name="description" content="<%= description %>" />
+    <meta http-equiv="x-dns-prefetch-control" content="on" />
+    <!--DNS预获取-->
+    <link rel="dns-prefetch" href="//unpkg.com" />
+    <!--预链接-->
+    <link rel="preconnect" href="//unpkg.com" />
+    <!-- 分享三方后的缩略图 -->
+    <meta property="og:image" content="/favicon.png" />
+    <title><%= title %></title>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        document.title = '<%= title %>'
+      })
+      if (!window.Promise) {
+        document.writeln('<script  src="/es6-promise.min.js"' + '>' + '<' + '/' + 'script>')
+      }
+    </script>
+    <script src="/flexible.js"></script>
+    <%- headLast %>
+    <style>
+      #wx-mask {
+        z-index: 99999;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+      }
+      #wx-mask .wx-toast-wrapper {
+        margin-top: 3%;
+        width: 100%;
+      }
+      #wx-mask .wx-toast-wrapper img {
+        float: right;
+        width: 70%;
+        margin-right: 5%;
+        object-fit: contain;
+      }
+    </style>
+  </head>
+  <body ontouchstart>
+    <%- bodyFirst %>
+    <webview-bridge-container style="display: none">
+      <div id="share_title"></div>
+      <div id="share_img"></div>
+      <div id="share_url"></div>
+    </webview-bridge-container>
+    <div id="root"></div>
+
+    <!-- 方便H5在微信弹出跳转浏览器的提示 -->
+    <div id="wx-mask" style="display: none">
+      <div class="wx-toast-wrapper">
+        <img loading="lazy" decoding="async" src="/wx-mask.png" alt="" />
+      </div>
+    </div>
+
+    <!-- 多entry的自定义模板处理 -->
+    <%- bodyLast %>
+  </body>
+</html>

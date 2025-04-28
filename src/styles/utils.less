@@ -1,0 +1,134 @@
+/*
+  常用样式工具方法
+  统一命名空间 .com-
+*/
+@import './variable.less';
+
+@com-color: black;
+.com-triangle-down (@color, @size: 6) {
+  width: 0;
+  height: 0;
+  border-top: @size * 1px solid @color;
+  border-left: @size * 1px solid transparent;
+  border-right: @size * 1px solid transparent;
+  border-bottom: 0;
+  position: absolute;
+  top: 50%;
+  margin-top: -(@size / 2) * 1px;
+}
+
+.com-triangle-up (@color, @size: 6) {
+  width: 0;
+  height: 0;
+  border-bottom: @size * 1px solid @color;
+  border-left: @size * 1px solid transparent;
+  border-right: @size * 1px solid transparent;
+  border-top: 0;
+  position: absolute;
+  top: 50%;
+  margin-top: -(@size / 2) * 1px;
+}
+
+.com-gradient (@start: top, @from, @to){
+  background-image: -webkit-gradient(linear, @start, from(@from), to(@to));
+  background-image: -moz-linear-gradient(@start, @from, @to);
+  background-image: -o-linear-gradient(@start, @from, @to);
+  background-image: -webkit-linear-gradient(@start, @from, @to);
+}
+
+.com-sprite-bg (@sprite-path, @sprite-width, @sprite-height, @x, @y) {
+  background: url(@sprite-path) no-repeat @x @y;
+  background-size: @sprite-width @sprite-height;
+}
+
+.com-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.background (@width, @height, @url, @bg-color: transparent) {
+  width: @width;
+  height: @height;
+  background: url(@url) no-repeat @bg-color;
+  background-size: 100%;
+}
+
+.placeholder-color (@color) {
+  &::-webkit-input-placeholder {
+    color: @color;
+  }
+  &::-moz-placeholder {
+    color: @color;
+  }
+  &:-moz-placeholder {
+    color: @color;
+  }
+  &::-ms-input-placeholder {
+    color: @color;
+  }
+}
+.layer(@zIndex: 10) {
+  z-index: @zIndex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.column-center(){
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.back-img(@url){
+  background-image: url(@url);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+/*多行样式溢出*/
+.text-over(@lines) {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  white-space: normal !important;
+  -webkit-line-clamp: @lines;
+  -webkit-box-orient: vertical;
+}
+/*禁止动画闪屏*/
+.animation-wrapper() {
+  perspective: 1000;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.font(@size, @height, @color: @main-color, @weight: normal, @align: center) {
+  font-size: @size;
+  line-height: @height;
+  color: @color;
+  font-weight: @weight;
+  text-align: @align;
+}
+
+.display-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-overflow {
+  overflow: hidden;
+  white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.absolutecenter {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

@@ -1,0 +1,77 @@
+@import '../../common/util.less';
+
+.main {
+  position: relative;
+  width: 702px;
+  margin: 0 auto 60px;
+  .background('apply-content-bg.png');
+  overflow: hidden;
+  box-sizing: border-box;
+
+  &_content {
+    margin: 120px 36px 48px 24px;
+  }
+}
+
+.text {
+  padding-left: 26px;
+  .font(24px, 44px, #3b24be, 400, justify);
+
+  &_indent {
+    text-indent: 20px;
+  }
+}
+
+.desc {
+  padding-left: 26px;
+  display: flex;
+  margin-bottom: 4px;
+
+  &_label {
+    width: 134px;
+    .font(26px, 44px, #3621f1, 500, justify);
+  }
+
+  &_content {
+    flex: 1;
+    .font(26px, 44px, #3b24be, 400, justify);
+  }
+}
+
+.img {
+  width: auto;
+  height: 50px;
+  margin-top: 28px;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+}
+
+.bottom {
+  &_audit {
+    width: 234px;
+    height: 46px;
+    margin: 46px auto 0;
+    .background('apply-auditing.png');
+  }
+
+  &_success {
+    margin: auto;
+    width: 280px;
+    height: 46px;
+    margin: 46px auto 0;
+    .background('apply-success.png');
+  }
+
+  &_apply {
+    width: 512px;
+    height: 104px;
+    margin: 32px auto 0;
+    .background('apply-submit.png');
+
+    &:active {
+      opacity: 0.75;
+    }
+  }
+}

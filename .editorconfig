@@ -1,0 +1,19 @@
+# http://editorconfig.org
+root = true
+
+[*]
+indent_style = space
+indent_size = 2
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+curly_bracket_next_line = false     # 大括号不另起一行
+
+[*.md]
+trim_trailing_whitespace = false
+
+[*.js]                              # 对所有的 js 文件生效
+quote_type = single                 # 字符串使用单引号
+
+[*.{html,less,css,json}]            # 对所有 html, less, css, json 文件生效
+quote_type = double                 # 字符串使用双引号
