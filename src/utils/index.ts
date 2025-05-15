@@ -1,5 +1,5 @@
 import type { CFun } from 'src/types'
-import { noop } from 'lodash-es'
+import { noop } from 'es-toolkit'
 
 const getUrlParams = (url: string = window.location.href): Record<string, string> => {
   const urlParams: Record<string, string> = {}
@@ -343,6 +343,10 @@ export const delay = (time: number) => {
       resolve()
     }, time)
   })
+}
+
+export const isObject = (obj: unknown): boolean => {
+  return toString.call(obj) === '[object Object]'
 }
 
 export { getUrlParams, stringifyParams, noop }

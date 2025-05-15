@@ -146,7 +146,7 @@ class Log {
   }
 }
 
-const log = new Log('http://www.baidu.com/api/v1/h5/log', {
+const log = new Log('/api/v1/h5/log', {
   userId: '1473869',
   userName: 'user name'
 })

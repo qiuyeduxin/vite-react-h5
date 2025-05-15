@@ -118,26 +118,6 @@ class LoadingManager {
       render(currentConfig)
     }
 
-    const self = this
-
-    function destroy() {
-      if (self.root) {
-        self.root?.unmount()
-        if (div?.parentNode) {
-          div.parentNode.removeChild(div)
-        }
-        self.root = null
-
-        for (let i = 0; i < destroyFns.length; i++) {
-          const fn = destroyFns[i]
-          if (fn === close) {
-            destroyFns.splice(i, 1)
-            break
-          }
-        }
-      }
-    }
-
     const render = (props: LoadingProps) => {
       this.root?.render(<Loading {...props} />)
     }

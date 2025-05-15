@@ -5,7 +5,6 @@ import { createRoot } from 'react-dom/client'
 import $loading from 'src/components/loading'
 import { setViewportFit, ua } from 'src/utils'
 import { insertTagToDocument } from 'src/utils/dom'
-import { IS_DEV } from 'src/config'
 import 'src/apis/serviceIntercept'
 
 const appContainer = document.getElementById('root')
@@ -55,7 +54,7 @@ if (ua.ios) {
   })
 }
 
-function entry(App: React.FC, opts: Record<string, any> = {}) {
+function entry(App: React.FC<any>, opts: Record<string, any> = {}) {
   const { store } = opts
 
   createRoot(appContainer!).render(

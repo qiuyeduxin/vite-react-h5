@@ -1,4 +1,4 @@
-import { isObject } from 'lodash-es'
+import { isObject } from 'src/utils'
 
 export const createDecorator = function (hocWrapper: Function, ...args: any[]) {
   if (typeof hocWrapper !== 'function')

@@ -16,9 +16,11 @@ export function getReqByBaseURL({ baseURL, timeout = 5e3 }: { baseURL: string; t
     get:
       (url: string, config: any = {}) =>
       (params?: ReqParams) =>
-        base.get(url, {
-          params,
-          ...config
-        })
+        base
+          .get(url, {
+            params,
+            ...config
+          })
+          .then((res) => res.data)
   }
 }

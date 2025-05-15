@@ -1,0 +1,24 @@
+@import '../../common/util.less';
+
+.navBar {
+  display: flex;
+  align-items: center;
+  padding: 0 32px; /* 原设计12px*2 16px*2 */
+  background: #FFFFFF;
+  height: 60px; /* 原设计44px*2 */
+
+  .backArrow {
+    width: 32px; /* 原设计24px*2 */
+    height: 24px; /* 原设计24px*2 */
+    .background('back.svg');
+  }
+
+  .title {
+    flex: 1;
+    text-align: center;
+    font-size: 32px; /* 原设计18px*2 */
+    font-weight: 600;
+    color: #333333;
+    margin: 0 16px; /* 原设计8px*2 */
+  }
+}
